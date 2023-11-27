@@ -1,0 +1,46 @@
+<main class="contenedor">
+  <form action="/vacantes/nueva" method="POST" class="default-form">
+    <h3>Información General</h3>
+    <div class="campo">
+      <label for="">Titulo</label>
+      <input
+        type="text"
+        name="titulo"
+        placeholder="Ej: React Development"
+        required
+      />
+    </div>
+    <div class="campo">
+      <label for="">Empresa</label>
+      <input
+        type="text"
+        name="empresa"
+        placeholder="Ej: Empresa contrata"
+        required
+      />
+    </div>
+    <div class="campo">
+      <label for="">Ubicación</label>
+      <input
+        type="text"
+        name="ubicacion"
+        placeholder="Ej: Ecuador o Remoto"
+        required
+      />
+    </div>
+    <div class="campo">
+      <label for="">Salario (USD)</label>
+      <input type="text" name="salario" placeholder="Ej: $500 USD" required />
+    </div>
+    <div class="campo">
+      <label for="">Contrato</label>
+      <select name="contrato" id="">
+        <option value="" disabled selected>--Selecciona</option>
+        <option value="freelance">Freelance</option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+    </div>
+  </form>
+</main>
