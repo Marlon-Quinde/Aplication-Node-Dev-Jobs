@@ -20,6 +20,7 @@ app.engine(
   "handlebars",
   engine({
     defaultLayout: "layout",
+    helpers: require("./helpers/handlebars.ts"),
   })
 );
 const viewsPath = path.join(__dirname, "views");
