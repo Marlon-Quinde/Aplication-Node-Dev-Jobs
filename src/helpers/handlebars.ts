@@ -1,5 +1,16 @@
+interface HandlebarsHelper {
+  lookupProperty: Function;
+  name: string;
+  hash: object;
+  fn: Function;
+  inverse: Function;
+  data: object;
+  loc: object;
+ }
+
 module.exports = {
-  seleccionarSkills: (seleccionadas = [], opciones: any) => {
+  seleccionarSkills: (seleccionadas = [], opciones: HandlebarsHelper) => {
+    // console.log( '[OPCIONES]',opciones)
     const skills = [
       "HTML5",
       "CSS3",
@@ -38,6 +49,6 @@ module.exports = {
             `;
     });
 
-    return (opciones.fn().html = html);
+    return html;
   },
 };
