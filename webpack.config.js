@@ -31,6 +31,11 @@ const config = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.ts?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
             }
 
             // Add your rules for custom modules here
