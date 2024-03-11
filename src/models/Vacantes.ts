@@ -4,24 +4,24 @@ import slug from "slug";
 import { generate } from "shortid";
 import { NextFunction } from "express";
 
-interface Vacantes {
-  titulo: string;
-  empresa: String;
-  ubicacion: String;
-  salario: String;
-  contrato: String;
-  url: String;
-  skills: String[];
+export interface VacanteModel {
+  titulo: string ;
+  empresa: string ;
+  ubicacion: string ;
+  salario: string ;
+  contrato: string;
+  url: string ;
+  skills: string | string[];
   candidatos: Canditos[];
 }
 
 interface Canditos {
-  nombre: String;
-  email: String;
-  cv: String;
+  nombre: string ;
+  email: string ;
+  cv: string ;
 }
 
-const vacantesSchema = new Schema<Vacantes>({
+const vacantesSchema = new Schema<VacanteModel>({
   titulo: {
     type: String,
     required: true,
@@ -38,7 +38,7 @@ const vacantesSchema = new Schema<Vacantes>({
   salario: {
     type: String,
     trim: true,
-    default: 0,
+    default: '0',
   },
   contrato: {
     type: String,
@@ -66,6 +66,5 @@ vacantesSchema.pre("save", function (next) {
   next();
 });
 
-const Vacante = mongoose.model("Vacante", vacantesSchema);
+export const Vacantes = mongoose.model("Vacante", vacantesSchema);
 
-export default Vacante;
