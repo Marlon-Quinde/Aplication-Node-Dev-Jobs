@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 import { HomePage } from "../../interfaces/renderPage.interface";
-import HomeService from "./service";
+import RenderPage from "../../helpers/renderPage";
 import mongoose from "mongoose";
 import { Vacantes } from '../../models/Vacantes';
 
 //* Models
 
-const homeService = new HomeService();
+const renderPage = new RenderPage();
 
 export const mostrarTrabajos = async (req: Request, res: Response, next: NextFunction) => {
   const vacantes = await Vacantes.find();
@@ -19,5 +19,5 @@ export const mostrarTrabajos = async (req: Request, res: Response, next: NextFun
     boton: true,
     vacantes
   };
-  homeService.homeRendePage(res, "home", ctx);
+  renderPage.renderPage(res, "home", ctx);
 };

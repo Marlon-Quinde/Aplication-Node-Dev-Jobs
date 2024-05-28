@@ -12,6 +12,7 @@ export interface VacanteModel {
   contrato: string;
   url: string ;
   skills: string | string[];
+  descripcion: string;
   candidatos: Canditos[];
 }
 
@@ -49,6 +50,10 @@ const vacantesSchema = new Schema<VacanteModel>({
     lowercase: true,
   },
   skills: [String],
+  descripcion: {
+    type: String,
+    trim: true,
+  },
   candidatos: [
     {
       nombre: String,
